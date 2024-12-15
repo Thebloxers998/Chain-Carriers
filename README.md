@@ -3,5 +3,7 @@ A turbowarp game that is still being worked on, start a pull request if you want
 
 
 
-it's over here: [https://github.com/Thebloxers998/Chain-Carriers](url)
+it's over here: [https://github.com/Thebloxers998/Chain-Carriers](url) 
+
+Please **Do Not** Steal Any Assets, They Are Not For You To Take
 
