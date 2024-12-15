@@ -1,6 +1,6 @@
 # Chain-Carriers
 
-Welcome to **Chain-Carriers**, an exciting TurboWarp game developed by Thebloxers998. This project is open-source and welcomes contributions from the community!
+Welcome to **Chain-Carriers**, an exciting TurboWarp game developed by Thebloxers998. This project is in development and welcomes contributions from the community!
 
 
 
