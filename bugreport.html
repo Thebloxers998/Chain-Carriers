@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chain Carriers Bug Report Form</title>
+    <title>TurboWarp Game Bug Report Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,7 +35,7 @@
             margin-bottom: 5px;
             color: #555;
         }
-        .form-group input, .form-group textarea, .form-group select {
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -57,54 +57,23 @@
         .form-group button:hover {
             background-color: #0056b3;
         }
-        .error {
-            color: red;
-            margin-top: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>TurboWarp Game Bug Report Form</h2>
-        <form id="bugReportForm" action="/submit-bug-report" method="post">
+        <form id="bugReportForm">
             <div class="form-group">
                 <label for="title">Bug Title:</label>
                 <input type="text" id="title" name="title" required>
-                <div class="error" id="titleError"></div>
-            </div>
-            <div class="form-group">
-                <label for="severity">Severity:</label>
-                <select id="severity" name="severity" required>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                    <option value="critical">Critical</option>
-                </select>
-                <div class="error" id="severityError"></div>
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" rows="5" required></textarea>
-                <div class="error" id="descriptionError"></div>
             </div>
             <div class="form-group">
-                <label for="steps">Steps to Reproduce:</label>
-                <textarea id="steps" name="steps" rows="5" required></textarea>
-                <div class="error" id="stepsError"></div>
-            </div>
-            <div class="form-group">
-                <label for="expected">Expected Result:</label>
-                <textarea id="expected" name="expected" rows="3" required></textarea>
-                <div class="error" id="expectedError"></div>
-            </div>
-            <div class="form-group">
-                <label for="actual">Actual Result:</label>
-                <textarea id="actual" name="actual" rows="3" required></textarea>
-                <div class="error" id="actualError"></div>
-            </div>
-            <div class="form-group">
-                <label for="attachments">Attachments:</label>
-                <input type="file" id="attachments" name="attachments" multiple>
+                <label for="image">Image File:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
             </div>
             <div class="form-group">
                 <button type="submit">Submit Bug Report</button>
@@ -113,60 +82,28 @@
     </div>
     <script>
         document.getElementById('bugReportForm').addEventListener('submit', function(event) {
-            let isValid = true;
+            event.preventDefault();
 
-            // Clear previous errors
-            document.querySelectorAll('.error').forEach(function(error) {
-                error.textContent = '';
-            });
-
-            // Validate title
             const title = document.getElementById('title').value;
-            if (title.trim() === '') {
-                isValid = false;
-                document.getElementById('titleError').textContent = 'Bug title is required.';
-            }
-
-            // Validate severity
-            const severity = document.getElementById('severity').value;
-            if (severity === '') {
-                isValid = false;
-                document.getElementById('severityError').textContent = 'Severity is required.';
-            }
-
-            // Validate description
             const description = document.getElementById('description').value;
-            if (description.trim() === '') {
-                isValid = false;
-                document.getElementById('descriptionError').textContent = 'Description is required.';
-            }
+            const image = document.getElementById('image').files[0];
 
-            // Validate steps
-            const steps = document.getElementById('steps').value;
-            if (steps.trim() === '') {
-                isValid = false;
-                document.getElementById('stepsError').textContent = 'Steps to reproduce are required.';
-            }
-
-            // Validate expected result
-            const expected = document.getElementById('expected').value;
-            if (expected.trim() === '') {
-                isValid = false;
-                document.getElementById('expectedError').textContent = 'Expected result is required.';
-            }
-
-            // Validate actual result
-            const actual = document.getElementById('actual').value;
-            if (actual.trim() === '') {
-                isValid = false;
-                document.getElementById('actualError').textContent = 'Actual result is required.';
-            }
-
-            if (!isValid) {
-                event.preventDefault();
+            if (title && description && image) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const bugReport = {
+                        title: title,
+                        description: description,
+                        image: e.target.result
+                    };
+                    localStorage.setItem('bugReport', JSON.stringify(bugReport));
+                    alert('Bug report saved to local storage!');
+                };
+                reader.readAsDataURL(image);
+            } else {
+                alert('Please fill out all fields and attach an image.');
             }
         });
     </script>
 </body>
 </html>
-
