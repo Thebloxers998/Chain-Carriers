@@ -36,10 +36,10 @@ We welcome contributions from everyone! To contribute, please follow these steps
    ```
 5. Create a pull request on GitHub.
 # LICENSE
-Thebloxers998/Chain-Carriers is licensed under the
-**MIT License**. 
-## Contact
-For any questions, suggestions, or feedback, feel free to ask 
+## Thebloxers998/Chain-Carriers is licensed under the **MIT License**. 
+
+# Contact
+## For any questions, suggestions, or feedback, feel free to ask 
 
 
 
