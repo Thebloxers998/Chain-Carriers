@@ -1,9 +1,54 @@
 # Chain-Carriers
-A turbowarp game that is still being worked on, start a pull request if you want to update the game
+
+Welcome to **Chain-Carriers**, an exciting TurboWarp game developed by Thebloxers998. This project is open-source and welcomes contributions from the community!
 
 
 
-it's over here: [https://github.com/Thebloxers998/Chain-Carriers](url) 
+## Introduction
+**Chain-Carriers** is a 4 player multiplayer game. The goal of the game is to drag a heavy box to next level. It offers engaging gameplay, creative challenges, and fun for players of all ages.
 
-Please **Do Not** Steal Any Assets, They Are Not For You To Take
+## Features
+- Feature 1: [Description of Feature 1]
+- Feature 2: [Description of Feature 2]
+- Feature 3: [Description of Feature 3]
+
+## Installation
+To get started with **Chain-Carriers**, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Thebloxers998/Chain-Carriers.git
+   ```
+2. Open the project in TurboWarp:
+   Install the SB3 file
+   Load it to turbowarp 
+
+## Usage
+1. [Step-by-step guide on how to play the game]
+2. [Any additional instructions or tips for users]
+
+## Contributing
+We welcome contributions from everyone! To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with your feature or bug fix:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your commit message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. Create a pull request on GitHub.
+
+## License
+This project is licensed under the MIT License. 
+## Contact
+For any questions, suggestions, or feedback, feel free to ask 
+
+
 
