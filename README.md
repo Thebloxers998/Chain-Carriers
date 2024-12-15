@@ -6,7 +6,7 @@ Welcome to **Chain-Carriers**, an exciting TurboWarp game developed by Thebloxer
 
 ## Introduction
 **Chain-Carriers** is a 4 player multiplayer game. The goal of the game is to drag a heavy box to next level. It offers engaging gameplay, creative challenges, and fun for players of all ages.
-----
+
 ## Installation
 To get started with **Chain-Carriers**, follow these steps:
 
@@ -17,10 +17,6 @@ To get started with **Chain-Carriers**, follow these steps:
 2. Open the project in TurboWarp:
    Install the SB3 file
    Load it to turbowarp 
-
-## Usage
-1. [Step-by-step guide on how to play the game]
-2. [Any additional instructions or tips for users]
 
 ## Contributing
 We welcome contributions from everyone! To contribute, please follow these steps:
