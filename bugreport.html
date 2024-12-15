@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Carriers Bug Report Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TurboWarp Game Bug Report Form</h2>
+        <form id="bugReportForm" action="/submit-bug-report" method="post">
+            <div class="form-group">
+                <label for="title">Bug Title:</label>
+                <input type="text" id="title" name="title" required>
+                <div class="error" id="titleError"></div>
+            </div>
+            <div class="form-group">
+                <label for="severity">Severity:</label>
+                <select id="severity" name="severity" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="critical">Critical</option>
+                </select>
+                <div class="error" id="severityError"></div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" required></textarea>
+                <div class="error" id="descriptionError"></div>
+            </div>
+            <div class="form-group">
+                <label for="steps">Steps to Reproduce:</label>
+                <textarea id="steps" name="steps" rows="5" required></textarea>
+                <div class="error" id="stepsError"></div>
+            </div>
+            <div class="form-group">
+                <label for="expected">Expected Result:</label>
+                <textarea id="expected" name="expected" rows="3" required></textarea>
+                <div class="error" id="expectedError"></div>
+            </div>
+            <div class="form-group">
+                <label for="actual">Actual Result:</label>
+                <textarea id="actual" name="actual" rows="3" required></textarea>
+                <div class="error" id="actualError"></div>
+            </div>
+            <div class="form-group">
+                <label for="attachments">Attachments:</label>
+                <input type="file" id="attachments" name="attachments" multiple>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Bug Report</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('bugReportForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error').forEach(function(error) {
+                error.textContent = '';
+            });
+
+            // Validate title
+            const title = document.getElementById('title').value;
+            if (title.trim() === '') {
+                isValid = false;
+                document.getElementById('titleError').textContent = 'Bug title is required.';
+            }
+
+            // Validate severity
+            const severity = document.getElementById('severity').value;
+            if (severity === '') {
+                isValid = false;
+                document.getElementById('severityError').textContent = 'Severity is required.';
+            }
+
+            // Validate description
+            const description = document.getElementById('description').value;
+            if (description.trim() === '') {
+                isValid = false;
+                document.getElementById('descriptionError').textContent = 'Description is required.';
+            }
+
+            // Validate steps
+            const steps = document.getElementById('steps').value;
+            if (steps.trim() === '') {
+                isValid = false;
+                document.getElementById('stepsError').textContent = 'Steps to reproduce are required.';
+            }
+
+            // Validate expected result
+            const expected = document.getElementById('expected').value;
+            if (expected.trim() === '') {
+                isValid = false;
+                document.getElementById('expectedError').textContent = 'Expected result is required.';
+            }
+
+            // Validate actual result
+            const actual = document.getElementById('actual').value;
+            if (actual.trim() === '') {
+                isValid = false;
+                document.getElementById('actualError').textContent = 'Actual result is required.';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
 
