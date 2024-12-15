@@ -39,9 +39,9 @@ We welcome contributions from everyone! To contribute, please follow these steps
    git push origin feature/YourFeatureName
    ```
 5. Create a pull request on GitHub.
-
-## License
-This project is licensed under the MIT License. 
+# LICENSE
+Thebloxers998/Chain-Carriers is licensed under the
+**MIT License**. 
 ## Contact
 For any questions, suggestions, or feedback, feel free to ask 
 
