@@ -40,12 +40,28 @@
             display: block;
             margin-top: 10px;
         }
+        .clear-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .clear-button:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Stored Bug Reports</h2>
         <div id="bugReports"></div>
+        <button class="clear-button" id="clearButton">Clear Bug Reports</button>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -72,6 +88,12 @@
             } else {
                 bugReportsContainer.textContent = 'No bug reports found.';
             }
+
+            document.getElementById('clearButton').addEventListener('click', function() {
+                localStorage.removeItem('bugReport');
+                bugReportsContainer.textContent = 'No bug reports found.';
+                alert('Bug reports cleared!');
+            });
         });
     </script>
 </body>
