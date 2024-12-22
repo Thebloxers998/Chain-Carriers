@@ -9,14 +9,11 @@ Welcome to **Chain-Carriers**, an exciting TurboWarp game developed by Thebloxer
 
 ## Installation
 To get started with **Chain-Carriers**, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Thebloxers998/Chain-Carriers.git
-   ```
-2. Open the project in TurboWarp:
+1. Open the project in TurboWarp:
    Install the SB3 file
-   Load it to turbowarp 
+   Load it to turbowarp
+   **OR**
+   if you are too **lazy**, [I'll give you the link to the game]
 
 ## Contributing
 We welcome contributions from everyone! To contribute, please follow these steps:
